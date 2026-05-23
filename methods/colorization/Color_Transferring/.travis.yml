@@ -1,0 +1,11 @@
+dist: trusty
+sudo: false
+language: cpp
+addons:
+  apt:
+    package:
+      - qt5-default
+      - qtbase5-dev
+script:
+  - qmake
+  - make
