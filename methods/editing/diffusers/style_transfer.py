@@ -20,15 +20,15 @@ else:
 pipe = pipe.to(device)
 
 # 3. Setup your file paths (Note the new output directory)
-input_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video1/"
-output_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/editing/style_transfer/"
+input_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video2/"
+output_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/editing/style_transfer/video2/frames"
 os.makedirs(output_dir, exist_ok=True)
 
 # 4. Define your global artistic style prompt
 prompt = "A highly detailed cyberpunk graphic novel illustration, ink outlines, dark neon color palette, masterpiece"
 
 # 5. Run the batch loop for the full video
-for i in range(1, 242):
+for i in range(1, 345):
     filename = f"frame_{i:04d}.png"
     input_path = os.path.join(input_dir, filename)
     output_path = os.path.join(output_dir, f"style_{i:04d}.png")
@@ -36,7 +36,7 @@ for i in range(1, 242):
     if not os.path.exists(input_path):
         continue
         
-    print(f"Processing Style Transfer: Frame {i}/241 on {device.upper()}")
+    print(f"Processing Style Transfer: Frame {i}/344 on {device.upper()}")
     
     # Load and downscale to 512x512 for stable processing
     init_image = Image.open(input_path).convert("RGB").resize((512, 512))
