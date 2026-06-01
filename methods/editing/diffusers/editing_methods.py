@@ -23,11 +23,11 @@ pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.conf
 pipe = pipe.to(device)
 
 # 3. Setup your file paths
-input_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video2/"
-output_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/editing/instruct_pix2pix/video2/frames"
+input_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video3/"
+output_dir = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/editing/diffusers/test/video3"
 os.makedirs(output_dir, exist_ok=True)
 
-prompt = "Make the scene look like a cinematic sci-fi movie with neon lights"
+prompt = "Put a golden royal crown on the person's head"
 
 # 4. Run the batch loop
 for i in range(1, 345):
