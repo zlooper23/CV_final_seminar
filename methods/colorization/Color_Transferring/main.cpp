@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     // 1. Define your source/exemplar image (the colored image you are copying from)
     // MAKE SURE TO CHANGE THIS PATH TO YOUR ACTUAL COLORED REFERENCE IMAGE
-    const char* source_path = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video2/frame_0001.png";
+    const char* source_path = "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/data/frames/video4/frame_0001.png";
 
     QImage sourceQImg(source_path);
     if(sourceQImg.isNull()) {
@@ -21,14 +21,14 @@ int main(int argc, char *argv[])
 
     #pragma omp parallel for
     // 2. Loop through all your frames (adjust 241 to your exact number of frames)
-    for (int i = 1; i <= 344; i++) {
+    for (int i = 1; i <= 101; i++) {
         char target_file[256];
         char out_file[256];
 
         // 3. Format the file paths (the %03d makes it frame_001, frame_002, etc.)
         // CHANGE THESE PATHS TO WHERE YOUR BLACK & WHITE FRAMES ARE AND WHERE YOU WANT TO SAVE THEM
         sprintf(target_file, "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/methods/colorization/Deep-Learning/Image Colorization Tutorial/data/frames/video/frame_%04d.png", i);
-        sprintf(out_file, "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/colorization/ExampleBased/video2/frames/color_%04d.png", i);
+        sprintf(out_file, "C:/Users/noelt/Desktop/UPF/CV_Seminar_Project/outputs/colorization/ExampleBased/video4/frames/color_%04d.png", i);
 
         printf("Processing Frame %03d...\n", i);
 
